@@ -12,7 +12,7 @@
 
 using namespace std;
 
-int main() {
+int main () {
   /****
   * A *
   ****/
@@ -21,14 +21,14 @@ int main() {
 
   cout << "Enter the string that needs to be reformatted: ";
 
-  if(!(getline(cin, userInput)) || userInput.length() > 200) {
+  if (!(getline(cin, userInput)) || userInput.length() > 200) {
     cout << "INVALID";
     return 0;
   }
 
-  for(const auto& symbol: userInput) {
-    if(isalpha(symbol)){
-      if(islower(symbol)) {
+  for (const auto& symbol: userInput) {
+    if (isalpha(symbol)){
+      if (islower(symbol)) {
         readyMadeString += toupper(symbol);
       } else {
         readyMadeString += tolower(symbol);
@@ -40,23 +40,23 @@ int main() {
 
   cout << "\nAnswer: " << readyMadeString << "\n\n";
 
+  
   /****
   * B *
   ****/
   vector<int> userVector, tempVector;
   int countElementVector, tempElement;
 
-
   cout << "Enter the number of elements in the vector: ";
 
-  if(!(cin >> countElementVector) || countElementVector < 0 || countElementVector > 100) {
+  if (!(cin >> countElementVector) || countElementVector < 0 || countElementVector > 100) {
     cout << "INVALID";
     return 0;
   }
 
-  for(int rowIndex = 0; rowIndex < countElementVector; ++rowIndex) {
+  for (int rowIndex = 0; rowIndex < countElementVector; ++rowIndex) {
     cout << "Enter an element " << rowIndex + 1 << ": ";
-    if(!(cin >> tempElement) || abs(tempElement) > 1000) {
+    if (!(cin >> tempElement) || abs(tempElement) > 1000) {
       cout << "INVALID";
       return 0;
     } else {
@@ -66,16 +66,16 @@ int main() {
 
   cout << "Vector useer: ";
 
-  for(const auto& symbol: userVector) {
+  for (const auto& symbol: userVector) {
     cout << symbol << ' ';
   }
 
-  if(userVector.size() == 0) {
+  if (userVector.size() == 0) {
     cout << "EMPTY";
     return 0;
   }
 
-  for(int rowIndex = 1; rowIndex < userVector.size(); ++rowIndex) {
+  for (int rowIndex = 1; rowIndex < userVector.size(); ++rowIndex) {
     tempVector.push_back(userVector[rowIndex]);
   }
 
@@ -84,9 +84,10 @@ int main() {
 
   cout << "\nAnswer: ";
 
-  for(const auto& symbol: userVector) {
+  for (const auto& symbol: userVector) {
     cout << symbol << ' ';
   }
+
 
   /****
   * C *
@@ -97,14 +98,14 @@ int main() {
 
   cout << "\n\nEnter the number of dictionary elements: ";
 
-  if(!(cin >> countElementMap) || countElementMap < 0) {
+  if (!(cin >> countElementMap) || countElementMap < 0) {
     cout << "INVALID";
     return 0;
   }
 
   cout << "Enter the dictionary keys and values:\n";
 
-  for(int rowIndex = 0; rowIndex < countElementMap; ++rowIndex) {
+  for (int rowIndex = 0; rowIndex < countElementMap; ++rowIndex) {
     cout << "Enter the key value: "; cin >> keyMap;
     cout << "Enter its value: ";     cin >> meaningMap;
 
@@ -113,15 +114,15 @@ int main() {
 
   cout << "\nFinal Glossary:\n";
 
-  for(const auto& coupleElements: userMap){
+  for (const auto& coupleElements: userMap){
     cout << "Key: "    << coupleElements.first << ' '
          << "Value: "  << coupleElements.second << '\n';
   }
 
   cout << "\nEnter the key you want to exclude: "; cin >> exclusionKey;
 
-  for(const auto& coupleElements: userMap){
-    if(coupleElements.first == exclusionKey) {
+  for (const auto& coupleElements: userMap){
+    if (coupleElements.first == exclusionKey) {
       continue;
     }
 
@@ -140,7 +141,7 @@ int main() {
 
   cout << "\n\nNumber of records: "; cin >> countLocatingObjects;
 
-  for(int rowIndex = 0; rowIndex < countLocatingObjects; ++rowIndex) {
+  for (int rowIndex = 0; rowIndex < countLocatingObjects; ++rowIndex) {
     cout << "locating = "; cin >> locating;
     cout << "objects = ";  cin >> object;
 
@@ -149,7 +150,7 @@ int main() {
 
   cout << "\nFinal Glossary:";
 
-  for(const auto& vectorElements: locatingObjects){
+  for (const auto& vectorElements: locatingObjects){
     cout << "item: "    << vectorElements.at("item") << ' '
          << "place: "  << vectorElements.at("place") << '\n';
   }
